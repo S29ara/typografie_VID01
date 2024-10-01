@@ -1,0 +1,476 @@
+@font-face {
+  font-family: 'AkzidenzGrotesk';
+  src: url(/fonts/Akzidenz-Grotesk-Pro/akzidenzgroteskpro_regular.ttf)
+}
+
+@font-face {
+  font-family: 'AkzidenzGrotesk-bold';
+  src: url(/fonts/Akzidenz-Grotesk-Pro/akzidenzgroteskpro_bold.ttf)
+}
+
+@font-face {
+  font-family: 'AkzidenzGrotesk-it';
+  src: url(/fonts/Akzidenz-Grotesk-Pro/akzidenzgroteskpro_it.ttf)
+}
+
+@font-face {
+  font-family: 'AkzidenzGrotesk-light';
+  src: url(/fonts/Akzidenz-Grotesk-Pro/akzidenzgroteskpro_light.ttf)
+}
+
+@font-face {
+  font-family: 'AkzidenzGrotesk-super';
+  src: url(/fonts/Akzidenz-Grotesk-Pro/akzidenzgroteskpro_super.ttf)
+}
+
+@font-face {
+  font-family: 'AkzidenzGrotesk-mdex';
+  src: url(/fonts/Akzidenz-Grotesk-Pro/akzidenzgroteskpro_mdex.ttf)
+}
+
+@font-face {
+  font-family: 'AkzidenzGrotesk-boldex';
+  src: url(/fonts/Akzidenz-Grotesk-Pro/akzidenzgroteskpro_boldex.otf)
+}
+
+.scroll-watcher {
+  height: 5px;
+  position: fixed;
+  top: 0;
+  left:0;
+  z-index: 1000;
+  background-color: #E23B37;
+  width: 100%;
+  scale: 0 1;
+  transform-origin: left;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll(y);
+}
+
+@keyframes scroll-watcher {
+  to {
+    scale: 1 1;
+  }
+}
+
+
+body {
+    margin: auto;
+    background-image: url(/images/background.svg);
+    background-repeat: repeat-y;
+    overflow-x: hidden; /* Voorkom horizontale scrollbalken */
+}
+
+
+header .titel {
+  width: 80%;
+  height: auto;
+  margin: 2vh 2vw 0 2vw;
+}
+
+header p {
+  font-family: 'AkzidenzGrotesk', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+  vertical-align: baseline;
+  line-height: 1.4em;
+  text-align: left;
+  word-wrap: break-word;
+  width: 70%;
+  font-kerning: auto;
+  margin-left: 2.5vw;
+}
+
+header p b {
+  font-family: 'AkzidenzGrotesk-bold',Arial, Helvetica, sans-serif;
+}
+
+.styled-wrapper-oorsprong {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Verberg de tekst als hij buiten de container beweegt */
+    position: relative;
+    width: 100vw; /* Volledige breedte van het scherm */
+    height: 40vh;
+}
+
+.styled-wrapper-oorsprong .scroll-text {
+  font-size: 10em;
+  font-weight: 500;
+  font-family: 'AkzidenzGrotesk', Arial, Helvetica, sans-serif;
+  color: #E23B37;
+  white-space: nowrap; /* Zorg ervoor dat de tekst op één regel blijft */
+  position: relative;
+  transition: transform 0.2s ease-out; /* Vloeiende overgang voor het verschuiven */
+  margin: 0;
+}
+
+.container-oorsprong {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-template-rows: 0.5fr 0.5fr 0.2fr;
+  margin: 2.5vw;
+}
+
+.container-oorsprong p:nth-of-type(1) {
+  font-family: 'AkzidenzGrotesk', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-kerning: auto;
+  vertical-align: baseline;
+  line-height: 1.5em;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  width: 46vw;
+}
+
+.container-oorsprong p:nth-of-type(2) {
+  font-family: 'AkzidenzGrotesk', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-kerning: auto;
+  vertical-align: baseline;
+  line-height: 1.5em;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+}
+
+.container-oorsprong img {
+  width: 50%;
+  height: auto;
+  filter: grayscale(5);
+  filter: brightness(2);
+}
+
+.container-oorsprong .hover-me {
+  font-family: 'AkzidenzGrotesk', Arial, Helvetica, sans-serif;
+  font-size: 5em;
+  grid-column-start: 2;
+  grid-column-end: -1;
+  grid-row-start: 3;
+  margin-top: 0.5em;
+}
+
+.container-oorsprong .hover-me:hover {
+  color: #333333;
+  text-shadow: 2px 2px 0px #fdfbf5, 3px 3px 0px rgba(0,0,0,5.30);
+}
+
+/* De woorden zijn in het begin onzichtbaar */
+.hover-me span {
+    opacity: 0;
+    transform: translateY(20px); /* Verplaats het woord een beetje naar beneden */
+    display: inline-block;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Actieve animatie, waarbij woorden zichtbaar worden */
+.show span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specifiek voor het animeren van de woorden */
+.show span:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.show span:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+h2 {
+  font-family: 'AkzidenzGrotesk', Arial, Helvetica, sans-serif;
+  font-size: 5em;
+  font-weight: 500;
+  vertical-align: baseline;
+  line-height: 1.4em;
+  margin: 10vw 2vw 2vw 2.5vw;
+}
+
+.plaat {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  animation: draai 10s linear infinite;
+  transition: animation 0.5s ease;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 5;
+  grid-column-end: 1;
+}
+
+@keyframes draai {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.plaat:hover {
+  animation-play-state: paused;
+  transition: animation 5s ease-out;
+}
+
+.grid-use {
+  display: grid;
+  grid-template-columns: 2fr 0.5fr 0.5fr 0.5fr;
+  grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.2fr;
+  height: max-content;
+}
+
+.grid-use figcaption {
+  font-family: 'AkzidenzGrotesk', Arial, Helvetica, sans-serif;
+  border-bottom: 2px solid #E23B37;
+}
+
+.grid-use .use1, .use2, .use3, .use4, .use5, .use6 {
+  width: 10vw;
+  height: auto;
+  filter: grayscale(1);
+}
+
+
+.grid-use .use1:hover, .use2:hover, .use3:hover, .use4:hover, .use5:hover, .use6:hover {
+  filter: grayscale(0);
+}
+
+.grid-use img:not(.plaat) {
+  width: 100%;
+  height: auto;
+  transform: scale(0.5); /* Begin klein */
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out; /* Smooth transition */
+  opacity: 0; /* Begin onzichtbaar */
+}
+
+.grid-use img.reveal {
+  transform: scale(1); /* Normale grootte */
+  opacity: 1; /* Maak zichtbaar */
+}
+
+.grid-use .fig-1 {
+  grid-column: 2;
+  grid-row: 1;
+  grid-row-end: 1;
+}
+
+.grid-use .fig-2 {
+  grid-column: 3;
+  grid-row: 2;
+  grid-row-end: 2;
+}
+
+.grid-use .fig-3 {
+  grid-column: 4;
+  grid-row: 1;
+  grid-row-end: 1;
+}
+
+.grid-use .fig-4 {
+  grid-column: 2;
+  grid-row: 4;
+  grid-row-end: 4;
+}
+
+.grid-use .fig-5 {
+  grid-column: 3;
+  grid-row: 5;
+  grid-row-end: 5;
+}
+
+.grid-use .fig-6 {
+  grid-column: 4;
+  grid-row: 4;
+  grid-row-end: 4;
+}
+
+.letter-kenmerken img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5vh;
+}
+
+.uitgerekt-lettertype {
+  font-family: 'AkzidenzGrotesk-mdex', sans-serif; /* Vervang met jouw font */
+  font-size: 3em; /* Stel een grotere grootte in als voorbeeld */
+  letter-spacing: 0em; /* Standaard spatiëring */
+  transform: scaleX(1); /* Normale horizontale schaal */
+  transition: letter-spacing 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+  white-space: nowrap;
+  margin: 6vh 2vw 0vh 2.5vw;
+  transform-origin: left;
+}
+
+.uitgerekt-lettertype p {
+  margin: 0;
+}
+
+.uitgerekt-lettertype.stretched {
+  letter-spacing: 0.2em; /* Vergroot de ruimte tussen de letters */
+  transform: scaleX(1.2); /* Horizontaal uitrekken */
+}
+
+.extended {
+  font-family: 'AkzidenzGrotesk', Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  font-kerning: auto;
+  vertical-align: baseline;
+  line-height: 1.5em;
+  width: 70vw;
+  margin: 2vw 2.5vw 0 2.5vw;
+}
+
+.invul-text {
+  font-family: 'AkzidenzGrotesk-mdex', Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  font-weight: 500;
+  color: #E23B37;
+  margin: 3vw 2.5vw 10vw 2.5vw;
+}
+
+.invul-text [contenteditable="true"]:active,
+[contenteditable="true"]:focus {
+  border-bottom: solid black 1px;
+  outline: none;
+}
+
+.line-1{
+  margin: 0 auto;
+  border-right: 2px solid rgb(255, 255, 255);
+  font-size: 2.5em;
+  text-align: center;
+  font-family: 'AkzidenzGrotesk-it', Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  font-kerning: auto;
+  vertical-align: baseline;
+  line-height: 1.5em;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 3s steps(30) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 100%;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgb(255, 255, 255);}
+  to{border-right-color: transparent;}
+}
+
+.container-typewriter {
+  background-color: black;
+  width: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-zoom {
+  overflow: hidden;
+}
+
+.image-zoom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zoom-image {
+  height: auto;
+  width: 100%;
+}
+
+.container-slideIn {
+  width: 100%;
+  height: 100vh;
+  display: flex; /* Voor centreren */
+  justify-content: center; /* Horizontaal centreren */
+  align-items: center; /* Verticaal centreren */
+  flex-direction: column; /* Kolomrichting voor h4 en p */
+  background-color: #E23B37;
+  color: #ffffff;
+}
+
+.container-slideIn h4 {
+  text-align: center;
+  opacity: 0; /* Begin onzichtbaar */
+  font-family: 'AkzidenzGrotesk', Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  font-kerning: auto;
+  vertical-align: baseline;
+  line-height: 1.5em;
+  position: relative; /* Verander naar relative om translateX te laten werken */
+  transform: translateX(100%); /* Begin buiten beeld aan de rechterkant */
+  transition: opacity 0.5s; /* Voor een soepele overgang */
+  margin-bottom: 2vw;
+}
+
+.slide-in {
+  animation: slideIn 2s forwards; /* Start animatie */
+}
+
+
+@keyframes slideIn {
+  0% {
+      transform: translateX(100%); /* Begin buiten beeld aan de rechterkant */
+      opacity: 0; /* Onzichtbaar */
+  }
+  100% {
+      transform: translateX(0); /* Stop in het midden van het scherm */
+      opacity: 1; /* Volledig zichtbaar */
+  }
+}
+
+.slide-up  {
+  text-align: center;
+  font-family: 'AkzidenzGrotesk', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  font-kerning: auto;
+  vertical-align: baseline;
+  line-height: 1.5em;
+  opacity: 0; /* Begin onzichtbaar */
+  transition: opacity 0.5s, transform 0.5s; /* Voor een soepele overgang */
+  margin: 0 2.5vw 0 2.5vw;
+}
+
+.slide-up-animate {
+  animation: slideUp 1s forwards; /* Start animatie */
+}
+
+@keyframes slideUp {
+  0% {
+      transform: translateY(100%); /* Begin vanuit onder */
+      opacity: 0; /* Onzichtbaar */
+  }
+  100% {
+      transform: translateY(0); /* Stop op zijn normale positie */
+      opacity: 1; /* Volledig zichtbaar */
+  }
+}
+
+.scroll-to-top {
+  position: fixed; /* Maak de knop vast aan de onderkant */
+  bottom: 20px; /* Ruimte vanaf de onderkant */
+  right: 30px; /* Ruimte vanaf de rechterkant */
+  background-color: #ffffff; /* Achtergrondkleur van de knop */
+  color: #E23B37; /* Kleur van de tekst */
+  border: 1px #E23B37 solid; /* Geen rand */
+  border-radius: 50%; /* Ronde hoeken */
+  padding: 2px 6px; /* Spatiëring binnen de knop */
+  cursor: pointer; /* Cursor verandert in pointer bij hover */
+  display: none; /* Begin als niet zichtbaar */
+  font-size: 1.5em; /* Grotere tekst */
+  transition: opacity 0.3s; /* Voor een soepele overgang */
+}
+
+.scroll-to-top:hover {
+  background-color: #ffffff; /* Donkerdere kleur bij hover */
+  color: rgb(0, 0, 0);
+}

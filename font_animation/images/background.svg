@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1366 768">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fdfcf7;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: .75px;
+      }
+
+      .cls-3 {
+        opacity: .15;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" width="1366" height="768"/>
+  <g class="cls-3">
+    <line class="cls-2" x1="35.5" y1=".5" x2="35.5" y2="768.5"/>
+  </g>
+  <g class="cls-3">
+    <line class="cls-2" x1="1331.5" y1="1" x2="1331.5" y2="769"/>
+  </g>
+  <g class="cls-3">
+    <line class="cls-2" x1="147.5" x2="147.5" y2="768"/>
+  </g>
+  <g class="cls-3">
+    <line class="cls-2" x1="161.5" x2="161.5" y2="768"/>
+  </g>
+  <g class="cls-3">
+    <line class="cls-2" x1="396.5" x2="396.5" y2="768"/>
+  </g>
+  <g class="cls-3">
+    <line class="cls-2" x1="410.5" x2="410.5" y2="768"/>
+  </g>
+  <g class="cls-3">
+    <line class="cls-2" x1="661.5" y1="1" x2="661.5" y2="769"/>
+  </g>
+  <g class="cls-3">
+    <line class="cls-2" x1="675.5" y1="1" x2="675.5" y2="769"/>
+  </g>
+  <g class="cls-3">
+    <line class="cls-2" x1="933.5" y1="1" x2="933.5" y2="769"/>
+  </g>
+  <g class="cls-3">
+    <line class="cls-2" x1="947.5" y1="1" x2="947.5" y2="769"/>
+  </g>
+  <g class="cls-3">
+    <line class="cls-2" x1="1205.5" y1="1" x2="1205.5" y2="769"/>
+  </g>
+  <g class="cls-3">
+    <line class="cls-2" x1="1219.5" y1="1" x2="1219.5" y2="769"/>
+  </g>
+</svg>
