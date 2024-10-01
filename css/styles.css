@@ -461,16 +461,11 @@ h2 {
   right: 30px; /* Ruimte vanaf de rechterkant */
   background-color: #ffffff; /* Achtergrondkleur van de knop */
   color: #E23B37; /* Kleur van de tekst */
-  border: 1px #E23B37 solid; /* Geen rand */
+  border: 2px #E23B37 solid; /* Geen rand */
   border-radius: 50%; /* Ronde hoeken */
   padding: 2px 6px; /* Spatiëring binnen de knop */
   cursor: pointer; /* Cursor verandert in pointer bij hover */
   display: none; /* Begin als niet zichtbaar */
   font-size: 1.5em; /* Grotere tekst */
-  transition: opacity 0.3s; /* Voor een soepele overgang */
-}
-
-.scroll-to-top:hover {
-  background-color: #ffffff; /* Donkerdere kleur bij hover */
-  color: rgb(0, 0, 0);
+  transition: opacity 0.3s ease; /* Voor een soepele overgang */
 }
